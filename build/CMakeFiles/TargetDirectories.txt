@@ -1,0 +1,3 @@
+/home/bsw/project/CADNURBS/build/CMakeFiles/rebuild_cache.dir
+/home/bsw/project/CADNURBS/build/CMakeFiles/edit_cache.dir
+/home/bsw/project/CADNURBS/build/CMakeFiles/CADNURBS.dir
