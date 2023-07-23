@@ -22,6 +22,7 @@ int main(){
     glm::vec3 tgt = tinynurbs::curveTangent(crv, 0.5f);
     // Outputs a vector [1, 0]  
     tinynurbs::curveSaveOBJ("output_curve.obj", crv);
+    
     return 0;
 
 }
