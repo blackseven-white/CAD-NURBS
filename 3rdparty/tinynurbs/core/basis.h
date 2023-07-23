@@ -12,6 +12,8 @@
 #include "../util/util.h"
 #include <vector>
 
+#include <LinearSearch.h>
+
 namespace tinynurbs
 {
 
@@ -40,22 +42,28 @@ template <typename T> int findSpan(unsigned int degree, const std::vector<T> &kn
 
     // Binary search
     // TODO: Replace this with std::lower_bound
-    int low = degree;
-    int high = n + 1;
-    int mid = (int)std::floor((low + high) / 2.0);
-    while (u < knots[mid] || u >= knots[mid + 1])
-    {
-        if (u < knots[mid])
-        {
-            high = mid;
-        }
-        else
-        {
-            low = mid;
-        }
-        mid = (int)std::floor((low + high) / 2.0);
-    }
-    return mid;
+    // int low = degree;
+    // int high = n + 1;
+    // int mid = (int)std::floor((low + high) / 2.0);
+    // while (u < knots[mid] || u >= knots[mid + 1])
+    // {
+    //     if (u < knots[mid])
+    //     {
+    //         high = mid;
+    //     }
+    //     else
+    //     {
+    //         low = mid;
+    //     }
+    //     mid = (int)std::floor((low + high) / 2.0);
+    // }
+    // return mid;
+
+    //线性搜索来改善
+    double* leftPtr = knots.data(); // 获取底层数组的起始地址作为左指针
+    double* rightPtr = leftPtr + knots.size(); // 获取右指针
+    return LinearSearch(leftPtr, rightPtr, u);
+
 }
 
 /**
